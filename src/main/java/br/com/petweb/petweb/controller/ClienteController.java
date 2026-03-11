@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.petweb.petweb.entity.Cliente;
 import br.com.petweb.petweb.service.ClienteService;
@@ -21,6 +20,10 @@ public class ClienteController {
     // Injeção de dependência da service de clientes
     private ClienteService clienteService;
 
+    public ClienteController(ClienteService clienteService){
+        this.clienteService = clienteService;
+    }
+    
     // Método para salvar o cliente
     @PostMapping("/salvar")
     public String salvar(@ModelAttribute Cliente cliente) {

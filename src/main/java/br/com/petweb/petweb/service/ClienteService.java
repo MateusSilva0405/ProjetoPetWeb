@@ -9,17 +9,18 @@ import br.com.petweb.petweb.repository.ClienteRepository;
 
 @Service
 public class ClienteService {
-    
-    // Injeção de dependência do repositório de clientes
+
     private ClienteRepository clienteRepository;
 
-    // Método para salvar um cliente
-    public Cliente save(Cliente cliente) {
+    public ClienteService(ClienteRepository clienteRepository){
+        this.clienteRepository = clienteRepository;
+    }
+
+    public Cliente save(Cliente cliente){
         return clienteRepository.save(cliente);
     }
 
-    // Método para listar todos os clientes
-    public List<Cliente> findAll() {
+    public List<Cliente> findAll(){
         return clienteRepository.findAll();
     }
 }
