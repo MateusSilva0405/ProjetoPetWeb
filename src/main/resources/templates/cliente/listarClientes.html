@@ -7,6 +7,8 @@
 </head>
 <body>
     <h1 style="text-align: center;">Listagem de Clientes</h1>
+    <h2 style="text-align: center;"><a th:href="@{/clientes/criar}">Novo Cliente</h2>
+
     <table border="1" align="center">
         <thead>
             <th>Nome</th>
@@ -17,7 +19,7 @@
             <th colspan="2">Ações</th>
         </thead>
         <tbody>
-            <tr th:each="cliente : &{clientes}">
+            <tr th:each="cliente : ${clientes}">
                 <td th:text="${cliente.nomeCliente}"></td>
                 <td th:text="${cliente.emailCliente}"></td>
                 <td th:text="${cliente.telefoneCliente}"></td>
