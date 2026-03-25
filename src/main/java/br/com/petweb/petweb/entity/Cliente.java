@@ -34,5 +34,22 @@ public class Cliente {
     private String enderecoCliente;
 
     @Column(nullable = false, length = 14)
-    private String cpfCliente;    
+    private String cpfCliente;   
+
+    private String cepCliente;
+
+    @Column(nullable = false, length = 40)
+    private String cidadeCliente;
+
+    @Column(nullable = false, length = 40)
+    private String ruaCliente;
+
+    @Column(nullable = false, length = 40)
+    private String bairroCliente;
+
+    @Column(nullable = false, length = 2)
+    private String ufCliente;
+
+    @Column(length = 20)
+    private String ibgeCliente;
 }

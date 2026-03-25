@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Animais</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Cadastro de Animais</h1>
+    <form action="/animals/salvar" method="post" th:object="${animal}">
+
+        <input type="hidden" name="idAnimal" th:field="*{idAnimal}">
+
+        <label for="nomeAnimal">Nome</label>
+        <input type="text" id="nomeAnimal" th:field="*{nomeAnimal}"> <br/><br/>
+
+        <label for="racaAnimal">Raca</label>
+        <input type="text" id="racaAnimal" th:field="*{racaAnimal}"> <br/><br/>
+
+        <label for="porteAnimal">Porte</label>
+        <input type="text" id="porteAnimal" th:field="*{porteAnimal}"> <br/><br/>
+
+        <label for="pesoAnimal">Peso</label>
+        <input type="text" id="pesoAnimal" th:field="*{pesoAnimal}"> <br/><br/>
+
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>

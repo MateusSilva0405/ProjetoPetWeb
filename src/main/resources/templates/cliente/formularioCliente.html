@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Clientes</title>
+
+    <style>
+
+    </style>
 </head>
 <body>
     <h1 style="text-align: center;">Cadastro de Clientes</h1>
@@ -11,22 +15,50 @@
 
         <input type="hidden" name="idCliente" th:field="*{idCliente}">
 
-        <label for="nomeCliente">Nome</label>
-        <input type="text" id="nomeCliente" th:field="*{nomeCliente}"> <br/><br/>
+        <div class="field">
+            <input type="text" id="nomeCliente" name="nomeCliente" th:field="*{nomeCliente}" placeholder=" " required> 
+            <label for="nomeCliente">Nome</label>
+        </div>
 
-        <label for="emailCliente">Email</label>
-        <input type="email" id="emailCliente" th:field="*{emailCliente}"> <br/><br/>
+        <div class="field">
+            <input type="email" id="emailCliente" name="emailCliente" th:field="*{emailCliente}" placeholder=" " required>
+            <label for="emailCliente">Email</label>
+        </div> 
 
-        <label for="telefoneCliente">Telefone</label>
-        <input type="text" id="telefoneCliente" th:field="*{telefoneCliente}"> <br/><br/>
+        <div class="field">
+            <input type="text" id="telefoneCliente" name="telefoneCliente" th:field="*{telefoneCliente}" placeholder=" " required> 
+            <label for="telefoneCliente">Telefone</label>
+        </div>
 
-        <label for="enderecoCliente">Endereço</label>
-        <input type="text" id="enderecoCliente" th:field="*{enderecoCliente}"> <br/><br/>
-    
-        <label for="cpfCliente">CPF</label>
-        <input type="text" id="cpfCliente" th:field="*{cpfCliente}"> <br/><br/>
+        <div class="field">
+            <input type="text" id="cpfCliente" name="telefoneCliente" th:field="*{cpfCliente}" placeholder=" " required>
+            <label for="cpfCliente">CPF</label>
+        </div>
 
-        <button type="submit">Salvar</button>
+        <div style="margin-bottom:18px;">
+            <label style="display:block;margin-bottom:8px;color:var(--muted);font-size:13px">Endereço</label>
+            <div class="cep-row">
+              <div class="field">
+                <input type="text" id="cep" name="cepPaciente" th:field="*{cepPaciente}" placeholder=" " required />
+                <label for="cep">CEP</label>
+              </div>
+              <button type="button" class="btn-lookup" id="btn-cep">Buscar</button>
+            </div>
+          </div>
+  
+          <div class="field"><input type="text" id="rua" name="ruaPaciente" th:field="*{ruaPaciente}" placeholder=" " /><label for="rua">Rua</label></div>
+          <div class="field"><input type="text" id="bairro" name="bairroPaciente" th:field="*{bairroPaciente}" placeholder=" " /><label for="bairro">Bairro</label></div>
+          <div style="display:flex;gap:12px;">
+            <div style="flex:1"><div class="field"><input type="text" id="cidade" name="cidadePaciente" th:field="*{cidadePaciente}" placeholder=" " /><label for="cidade">Cidade</label></div></div>
+            <div style="width:120px"><div class="field"><input type="text" id="uf" name="ufPaciente" th:field="*{ufPaciente}" placeholder=" " /><label for="uf">Estado</label></div></div>
+        </div>
+  
+          <input type="hidden" id="ibge" name="ibgePaciente" th:field="*{ibgePaciente}" /> 
+          
+        <div class="actions">
+            <button type="submit">Salvar</button>
+            <a href="/clientes" class="btn-back">Voltar</a>
+        </div>
     </form>
 </body>
 </html>

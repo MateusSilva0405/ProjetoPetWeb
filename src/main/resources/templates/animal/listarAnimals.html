@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Animais</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Listagem de Animais</h1>
+    <h2 style="text-align: center;"><a th:href="@{/animals/criar}">Novo Animal</h2>
+
+    <table border="1" align="center">
+        <thead>
+            <th>Nome</th>
+            <th>Raça</th>
+            <th>Porte</th>
+            <th>Peso</th>
+            <th colspan="2">Ações</th>
+        </thead>
+        <tbody>
+            <tr th:each="animal : ${animals}">
+                <td th:text="${animal.nomeAnimal}"></td>
+                <td th:text="${animal.racaAnimal}"></td>
+                <td th:text="${animal.porteAnimal}"></td>
+                <td th:text="${animal.pesoAnimal}"></td>
+                <td>
+                    <a th:href="@{/animals/editar/{id}(id=${animal.idAnimal})}">Editar</a>
+                    <a th:href="@{/animals/excluir/{id}(id=${animal.idAnimal})}">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
